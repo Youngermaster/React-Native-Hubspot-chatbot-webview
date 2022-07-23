@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,6 +17,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { WebView } from "react-native-webview";
 
 import {
   Colors,
@@ -26,7 +27,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
+const HUBSPOT_URL = 'https://google.com/';
+
+const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -65,11 +68,12 @@ const App: () => Node = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Text>Header 1</Text>
+          <WebView source={{uri: HUBSPOT_URL}} />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
@@ -83,7 +87,15 @@ const App: () => Node = () => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
         </View>
       </ScrollView>
     </SafeAreaView>

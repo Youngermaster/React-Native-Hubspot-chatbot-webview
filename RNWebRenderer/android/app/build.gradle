@@ -166,6 +166,7 @@ android {
                 }
             }
         }
+        multiDexEnabled true
     }
 
     if (isNewArchitectureEnabled()) {
