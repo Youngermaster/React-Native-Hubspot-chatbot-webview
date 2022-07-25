@@ -1,4 +1,10 @@
 {
-  "name": "RNWebRenderer",
-  "displayName": "RNWebRenderer"
+  "expo": {
+    "name": "RNWebRenderer",
+    "slug": "RNWebRenderer",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
 }
